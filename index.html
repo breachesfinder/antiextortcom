@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Antiextort</title>
+  <link rel="icon" href="https://files.catbox.moe/lbm66a.png" type="image/png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 16px;
+      text-align: center;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #intro {
+      font-size: 22px;
+      color: white;
+      display: block;
+    }
+
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      50.01%, 100% { opacity: 0; }
+    }
+
+    .profile-wrapper {
+      display: none;
+      flex-direction: row;
+      margin-top: 20px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .profile-grid {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 10px;
+      border: 1px solid white;
+      width: 260px;
+      height: 400px; /* Keeps the taller shape like before */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px; /* Small consistent space between profiles */
+    }
+
+    img.pfp {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 10px 0;
+    }
+
+    p {
+      margin: 5px 0 0;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #888;
+      margin: 20px auto;
+      width: 80%;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="intro">
+    Welcome To Antiextort<span class="cursor">█</span>
+  </div>
+
+  <div class="profile-wrapper" id="profiles">
+
+    <!-- Memory (Far Left) -->
+    <div class="profile-container">
+      <div class="profile-grid">
+        <h1>Memory</h1>
+        <p>Unforgettable Legacy</p>
+        <hr />
+      </div>
+    </div>
+
+    <!-- Sec (Middle Left) -->
+    <div class="profile-container">
+      <div class="profile-grid">
+        <img class="pfp" src="https://files.catbox.moe/by2dln.jpg" alt="pfp" id="sec-pic" />
+        <h1>Sec™</h1>
+        <p>King Of Kings</p>
+        <hr />
+      </div>
+    </div>
+
+    <!-- Enact (Middle Right) -->
+    <div class="profile-container">
+      <div class="profile-grid">
+        <h1>Enact</h1>
+        <p>Action Over Words</p>
+        <hr />
+      </div>
+    </div>
+
+    <!-- Krone (Far Right) -->
+    <div class="profile-container">
+      <div class="profile-grid">
+        <h1>Krone</h1>
+        <p>Crowned In Silence</p>
+        <hr />
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://files.catbox.moe/b3n462.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    // Reveal profiles on click
+    document.body.addEventListener('click', function() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('profiles').style.display = 'flex';
+      const music = document.getElementById('bg-music');
+      music.play().catch(() => console.log('Autoplay blocked'));
+
+
+</body>
+</html>
