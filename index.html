@@ -45,11 +45,11 @@
       margin-top: 20px;
       justify-content: center;
       align-items: center;
+      gap: 20px;
     }
 
     .profile-container {
       text-align: center;
-      padding: 20px;
     }
 
     .profile-grid {
@@ -58,12 +58,11 @@
       border-radius: 10px;
       border: 1px solid white;
       width: 260px;
-      height: 400px; /* Keeps the taller shape like before */
+      height: 400px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      margin: 0 10px; /* Small consistent space between profiles */
     }
 
     img.pfp {
@@ -72,7 +71,6 @@
       object-fit: cover;
       border-radius: 5px;
       margin-bottom: 20px;
-      cursor: pointer;
     }
 
     h1 {
@@ -95,7 +93,7 @@
 <body>
 
   <div id="intro">
-    Welcome To Antiextort<span class="cursor">█</span>
+    Welcome To Antiextort<span class="cursor">█</span><br><small>(Press any key or click to continue)</small>
   </div>
 
   <div class="profile-wrapper" id="profiles">
@@ -112,7 +110,7 @@
     <!-- Sec (Middle Left) -->
     <div class="profile-container">
       <div class="profile-grid">
-        <img class="pfp" src="https://files.catbox.moe/by2dln.jpg" alt="pfp" id="sec-pic" />
+        <img class="pfp" src="https://files.catbox.moe/by2dln.jpg" alt="Sec PFP" />
         <h1>Sec™</h1>
         <p>King Of Kings</p>
         <hr />
@@ -145,13 +143,20 @@
   </audio>
 
   <script>
-    // Reveal profiles on click
-    document.body.addEventListener('click', function() {
+    function showProfiles() {
       document.getElementById('intro').style.display = 'none';
       document.getElementById('profiles').style.display = 'flex';
       const music = document.getElementById('bg-music');
       music.play().catch(() => console.log('Autoplay blocked'));
 
+      // Event listeners removed after first trigger
+      document.removeEventListener('click', showProfiles);
+      document.removeEventListener('keydown', showProfiles);
+    }
+
+    document.addEventListener('click', showProfiles);
+    document.addEventListener('keydown', showProfiles);
+  </script>
 
 </body>
 </html>
