@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>AntiExtort</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
   <style>
     @font-face {
       font-family: 'Minecraftia';
@@ -19,6 +20,7 @@
       color: white;
       font-family: 'Minecraftia', sans-serif;
       text-align: center;
+      overflow-x: hidden;
     }
 
     #overlay {
@@ -31,16 +33,22 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: white;
+      font-size: 28px;
       z-index: 9999;
       cursor: pointer;
     }
 
-    #overlay p {
-      font-size: 28px;
-    }
-
     .container {
       padding: 50px 20px;
+    }
+
+    .title {
+      font-size: 48px;
+      margin-bottom: 50px;
+    }
+
+    .profiles {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -48,161 +56,124 @@
     }
 
     .profile {
-      border: 1px solid white;
-      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid #fff;
+      padding: 30px;
+      border-radius: 16px;
       width: 250px;
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .profile img {
       width: 160px;
       height: 160px;
+      border-radius: 10px;
       object-fit: cover;
-      border-radius: 8px;
-      margin-top: 10px;
+      margin-bottom: 15px;
     }
 
-    .profile p {
-      margin: 10px 0 5px 0;
+    .profile .username {
+      font-size: 22px;
+      margin: 5px 0;
+    }
+
+    .profile .motto {
       font-size: 16px;
+      color: #aaa;
+      margin-bottom: 10px;
     }
 
-    .profile hr {
-      border: 0;
-      border-top: 1px solid #aaa;
-      margin: 10px auto;
-      width: 80%;
+    .profile .skills {
+      font-size: 12px;
+      color: #ccc;
     }
 
-    .socials {
-      margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
+    .crown {
+      color: white;
+      font-size: 22px;
+      margin-bottom: 10px;
     }
 
-    .socials img {
-      width: 24px;
-      height: 24px;
-    }
-
-    .sparkle-text {
-      animation: sparkling 2s infinite;
-      font-size: 20px;
-    }
-
-    .info {
-      font-size: 14px;
-    }
-
-    @keyframes sparkling {
-      0% { opacity: 0.2; }
-      50% { opacity: 1; }
-      100% { opacity: 0.2; }
+    audio {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <div id="overlay">
-    <p>Click to enter...</p>
-  </div>
+  <div id="overlay">Click to enter...</div>
 
   <div class="container">
+    <h1 class="title">AntiExtort</h1>
+    <div class="profiles">
 
-    <!-- Paranoid -->
-    <div class="profile">
-      <img src="https://files.catbox.moe/g77bn5.jpg" alt="Paranoid" />
-      <p class="sparkle-text">@Paranoid</p>
-      <p class="info">Strategist Behind The Veil</p>
-      <hr />
-      <p class="info">OSINT / CSINT</p>
-      <div class="socials">
-        <a href="https://doxbin.net/user/choir" target="_blank">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" />
-        </a>
-        <a href="https://t.me/TLOcomboss">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" />
-        </a>
+      <!-- Paranoid -->
+      <div class="profile">
+        <img src="https://files.catbox.moe/g77bn5.jpg" alt="Paranoid">
+        <div class="username">@Paranoid</div>
+        <div class="motto">Most Diligent Eye</div>
+        <div class="skills">OSINT / CSINT</div>
       </div>
-    </div>
 
-    <!-- Enact -->
-    <div class="profile">
-      <i class="fa-solid fa-crown" style="color: gold; font-size: 20px;"></i><br />
-      <img src="https://files.catbox.moe/p2jzii.jpg" alt="Enact" />
-      <p class="sparkle-text">@Enact</p>
-      <p class="info">Soldier Of God</p>
-      <hr />
-      <p class="info">OSINT / CSINT</p>
-      <div class="socials">
-        <a href="https://doxbin.net/user/laugh" target="_blank">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" />
-        </a>
-        <a href="https://t.me/temp04">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" />
-        </a>
+      <!-- Enact -->
+      <div class="profile">
+        <div class="crown"><i class="fas fa-crown"></i></div>
+        <img src="https://files.catbox.moe/p2jzii.jpg" alt="Enact">
+        <div class="username">@Enact</div>
+        <div class="motto">Soldier Of God</div>
+        <div class="skills">OSINT / CSINT</div>
       </div>
-    </div>
 
-    <!-- Sec -->
-    <div class="profile">
-      <img src="https://files.catbox.moe/by2dln.jpg" alt="Sec" />
-      <p class="sparkle-text">@Sec</p>
-      <p class="info">Youngest To Do It</p>
-      <hr />
-      <p class="info">OSINT / CSINT / TLO</p>
-      <div class="socials">
-        <a href="https://doxbin.net/user/wpa" target="_blank">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" />
-        </a>
-        <a href="https://t.me/tloskid">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" />
-        </a>
+      <!-- Krone -->
+      <div class="profile">
+        <div class="crown"><i class="fas fa-crown"></i></div>
+        <img src="https://files.catbox.moe/8dgxzi.jpg" alt="Krone">
+        <div class="username">@Krone</div>
+        <div class="motto">Mind Behind Shadows</div>
+        <div class="skills">OSINT / CSINT</div>
       </div>
-    </div>
 
-    <!-- Krone -->
-    <div class="profile">
-      <i class="fa-solid fa-crown" style="color: gold; font-size: 20px;"></i><br />
-      <img src="https://files.catbox.moe/8dgxzi.jpg" alt="Krone" />
-      <p class="sparkle-text">@Krone</p>
-      <p class="info">Code of Chaos</p>
-      <hr />
-      <p class="info">OSINT / CSINT</p>
-      <div class="socials">
-        <a href="https://doxbin.net" target="_blank">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" />
-        </a>
-        <a href="https://t.me/discordboyfriend">
-          <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" />
-        </a>
+      <!-- Sec -->
+      <div class="profile">
+        <img src="https://files.catbox.moe/by2dln.jpg" alt="Sec">
+        <div class="username">@Sec</div>
+        <div class="motto">Youngest To Do It</div>
+        <div class="skills">OSINT / CSINT / TLO</div>
       </div>
-    </div>
 
+    </div>
   </div>
+
+  <audio id="bg-audio" autoplay loop>
+    <source src="https://files.catbox.moe/l7xc55.mp3" type="audio/mp3">
+  </audio>
 
   <script>
     document.getElementById("overlay").addEventListener("click", function () {
       document.getElementById("overlay").style.display = "none";
-      var audio = new Audio('https://files.catbox.moe/l7xc55.mp3');
+      const audio = document.getElementById("bg-audio");
       audio.volume = 0.6;
-      audio.play();
+      audio.play().catch(() => {});
     });
 
-    // Anti-inspect
-    document.addEventListener('contextmenu', e => e.preventDefault());
-    document.addEventListener('keydown', e => {
+    // Basic anti-inspect
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', event => {
       if (
-        e.key === "F12" ||
-        (e.ctrlKey && e.shiftKey && ["I", "J", "C"].includes(e.key)) ||
-        (e.ctrlKey && e.key === "U")
-      ) e.preventDefault();
+        event.key === "F12" ||
+        (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key)) ||
+        (event.ctrlKey && event.key === "U")
+      ) {
+        event.preventDefault();
+      }
     });
 
-    setInterval(() => {
-      if (window.outerWidth - window.innerWidth > 160 || window.outerHeight - window.innerHeight > 160) {
+    // Inspect window check
+    setInterval(function () {
+      const threshold = 160;
+      if (window.outerWidth - window.innerWidth > threshold || window.outerHeight - window.innerHeight > threshold) {
         document.body.innerHTML = "<h1 style='color: red; text-align: center;'>DevTools are not allowed.</h1>";
       }
     }, 1000);
