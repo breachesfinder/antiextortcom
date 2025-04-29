@@ -29,6 +29,13 @@
             background-color: black;
             color: white;
             font-family: 'Minecraftia', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
         }
 
         .navigation a {
@@ -54,7 +61,7 @@
 
         .container {
             text-align: center;
-            margin-top: 30px;
+            width: 100%;
         }
 
         .title {
@@ -65,11 +72,13 @@
 
         .profiles {
             display: flex;
-            flex-wrap: nowrap; /* Prevent wrapping */
             justify-content: center;
-            overflow-x: auto;   /* Enables horizontal scrolling on small screens */
             gap: 40px;
             padding-bottom: 20px;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            max-width: 100%;
+            align-items: center;
         }
 
         .profile {
