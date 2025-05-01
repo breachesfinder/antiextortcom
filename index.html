@@ -62,14 +62,14 @@
         .container {
             text-align: center;
             width: 100%;
-            padding-top: 20px; /* Added slight padding to lift the container a little */
+            padding-top: 20px;
         }
 
         .title {
             font-size: 48px;
             color: white;
             text-align: center;
-            margin-bottom: 20px; /* Added margin to slightly move the title up */
+            margin-bottom: 20px;
         }
 
         .profiles {
@@ -81,7 +81,7 @@
             overflow-x: auto;
             max-width: 100%;
             align-items: center;
-            margin-top: 10px; /* Added margin to slightly lift profiles */
+            margin-top: 10px;
         }
 
         .profile {
@@ -135,7 +135,7 @@
         <h1 class="title">AntiExtort</h1>
 
         <div class="profiles">
-
+            <!-- Paranoid Profile -->
             <div class="profile">
                 <img src="https://files.catbox.moe/g77bn5.jpg" alt="Paranoid">
                 <p>@Paranoid</p>
@@ -149,19 +149,7 @@
                 </div>
             </div>
 
-                        <div class="profile">
-                <img src="https://files.catbox.moe/by2dln.jpg" alt="Sec">
-                <p>@Sec</p>
-                <div class="socials">
-                    <a href="https://doxbin.net/user/wpa" target="_blank">
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" alt="site">
-                    </a>
-                    <a href="https://t.me/tloskid">
-                        <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" alt="contact">
-                    </a>
-               
-                
-                </div>
+            <!-- Enact Profile -->
             <div class="profile">
                 <i class="fa-solid fa-crown"></i>
                 <img src="https://files.catbox.moe/p2jzii.jpg" alt="Enact">
@@ -176,7 +164,7 @@
                 </div>
             </div>
 
-            
+            <!-- Krone Profile -->
             <div class="profile">
                 <i class="fa-solid fa-crown"></i>
                 <img src="https://files.catbox.moe/8dgxzi.jpg" alt="Krone">
@@ -191,10 +179,24 @@
                 </div>
             </div>
 
-           
+            <!-- Sec Profile -->
             <div class="profile">
                 <img src="https://files.catbox.moe/by2dln.jpg" alt="Sec">
-                <p>@Memory</p>
+                <p>@Sec</p>
+                <div class="socials">
+                    <a href="https://doxbin.net/user/wpa" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" alt="site">
+                    </a>
+                    <a href="https://t.me/tloskid">
+                        <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" alt="contact">
+                    </a>
+                </div>
+            </div>
+
+            <!-- Memory Profile -->
+            <div class="profile">
+                <img src="https://files.catbox.moe/jmdobs.jpg" alt="Memory">
+                <p>@memory</p>
                 <div class="socials">
                     <a href="https://doxbin.com/user/choir" target="_blank">
                         <img src="https://img.icons8.com/ios-filled/50/ffffff/globe.png" alt="site">
@@ -203,7 +205,6 @@
                         <img src="https://img.icons8.com/ios-filled/50/ffffff/paper-plane.png" alt="contact">
                     </a>
                 </div>
-            
             </div>
 
         </div>
@@ -221,8 +222,8 @@
 
         document.addEventListener('keydown', event => {
             if (
-                event.key === "F12" 
-                (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key)) 
+                event.key === "F12" || 
+                (event.ctrlKey && event.shiftKey && ["I", "J", "C"].includes(event.key)) || 
                 (event.ctrlKey && event.key === "U")
             ) {
                 event.preventDefault();
